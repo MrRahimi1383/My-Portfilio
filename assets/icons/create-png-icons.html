@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create PNG Icons</title>
+</head>
+<body>
+    <h2>Creating PNG Icons...</h2>
+    <canvas id="canvas192" width="192" height="192"></canvas>
+    <canvas id="canvas512" width="512" height="512"></canvas>
+    
+    <script>
+        function createIcon(size) {
+            const canvas = document.getElementById(`canvas${size}`);
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            // Draw background circle
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - 8, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Draw border
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 8;
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - 8, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+            // Draw code brackets and slash
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = size * 0.024;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const symbolSize = size * 0.15;
+            
+            // Left bracket
+            ctx.beginPath();
+            ctx.moveTo(centerX - symbolSize, centerY - symbolSize * 0.8);
+            ctx.lineTo(centerX - symbolSize * 1.4, centerY - symbolSize * 0.3);
+            ctx.lineTo(centerX - symbolSize * 1.4, centerY + symbolSize * 0.3);
+            ctx.lineTo(centerX - symbolSize, centerY + symbolSize * 0.8);
+            ctx.stroke();
+            
+            // Right bracket
+            ctx.beginPath();
+            ctx.moveTo(centerX + symbolSize, centerY - symbolSize * 0.8);
+            ctx.lineTo(centerX + symbolSize * 1.4, centerY - symbolSize * 0.3);
+            ctx.lineTo(centerX + symbolSize * 1.4, centerY + symbolSize * 0.3);
+            ctx.lineTo(centerX + symbolSize, centerY + symbolSize * 0.8);
+            ctx.stroke();
+            
+            // Slash
+            ctx.beginPath();
+            ctx.moveTo(centerX + symbolSize * 0.5, centerY - symbolSize * 1.2);
+            ctx.lineTo(centerX - symbolSize * 0.5, centerY + symbolSize * 1.2);
+            ctx.stroke();
+            
+            // Add "P" for Portfolio
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `bold ${size * 0.2}px Arial, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.fillText('P', centerX, centerY + symbolSize * 2.2);
+            
+            return canvas.toDataURL('image/png');
+        }
+        
+        // Create and download icons
+        function downloadIcon(size, dataUrl) {
+            const link = document.createElement('a');
+            link.download = `icon-${size}.png`;
+            link.href = dataUrl;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Generate icons
+        const icon192Data = createIcon(192);
+        const icon512Data = createIcon(512);
+        
+        // Auto-download (you'll need to save these manually)
+        setTimeout(() => {
+            downloadIcon(192, icon192Data);
+        }, 1000);
+        
+        setTimeout(() => {
+            downloadIcon(512, icon512Data);
+        }, 2000);
+        
+        // Display instructions
+        document.body.innerHTML += `
+            <div style="margin-top: 20px;">
+                <h3>Instructions:</h3>
+                <p>1. The PNG files should download automatically</p>
+                <p>2. Save them as:</p>
+                <ul>
+                    <li><code>assets/icons/icon-192.png</code></li>
+                    <li><code>assets/icons/icon-512.png</code></li>
+                </ul>
+                <p>3. If auto-download doesn't work, right-click the canvases above and "Save image as..."</p>
+            </div>
+        `;
+    </script>
+</body>
+</html>

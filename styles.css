@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark .gradient-bg {
+    background: linear-gradient(135deg, #4c51bf 0%, #6b46c1 100%);
+}
+
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.skill-bar {
+    transition: width 2s ease-in-out;
+}
+
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #667eea;
+}
+
+.dark .nav-link:hover {
+    color: #a78bfa;
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.profile-image {
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+}
+
+/* Profile photo styling */
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 2;
+    position: relative;
+}
+
+/* Fallback icon styling */
+.profile-icon {
+    font-size: 6rem;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Hidden by default, shown when image fails to load */
+}
+
+/* Show icon when image fails to load */
+.profile-image:has(.profile-photo[src=""]) .profile-icon,
+.profile-image .profile-photo[style*="display: none"] + .profile-icon {
+    display: block;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensure proper section spacing */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Dark mode support */
+.dark {
+    color-scheme: dark;
+}
+
+/* Navigation improvements */
+.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark .navbar-scrolled {
+    background: rgba(17, 24, 39, 0.95) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-scrolled .nav-text {
+    color: #374151 !important;
+}
+
+.dark .navbar-scrolled .nav-text {
+    color: #f3f4f6 !important;
+}
+
+.navbar-scrolled .nav-text:hover {
+    color: #667eea !important;
+}
+
+/* Glass effect improvements */
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+    background: rgba(17, 24, 39, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark #theme-toggle {
+    background-color: rgba(17, 24, 39, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark #theme-toggle:hover {
+    background-color: rgba(17, 24, 39, 0.5);
+}
+
+/* Dark mode styles for sections */
+.dark section {
+    background-color: inherit;
+}
+
+.dark .bg-white {
+    background-color: #1f2937;
+}
+
+.dark .bg-gray-50 {
+    background-color: #111827;
+}
+
+.dark .text-gray-800 {
+    color: #f3f4f6;
+}
+
+.dark .text-gray-600 {
+    color: #d1d5db;
+}
+
+.dark .text-gray-700 {
+    color: #e5e7eb;
+}
+
+.dark .text-gray-500 {
+    color: #9ca3af;
+}
+
+.dark .text-gray-400 {
+    color: #6b7280;
+}
+
+/* Dark mode for cards and components */
+.dark .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+.dark .shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode for form elements */
+.dark input,
+.dark textarea {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f3f4f6;
+}
+
+.dark input:focus,
+.dark textarea:focus {
+    border-color: #667eea;
+    background-color: #4b5563;
+}
+
+/* Dark mode for skill bars background */
+.dark .bg-gray-200 {
+    background-color: #374151;
+}
+
+/* Loading state */
+body.loaded {
+    opacity: 1;
+}
+
+/* Responsive profile image */
+@media (max-width: 768px) {
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .profile-icon {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .profile-icon {
+        font-size: 3rem;
+    }
+}

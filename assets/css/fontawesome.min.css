@@ -1,0 +1,85 @@
+/*!
+ * Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../fonts/fa-solid-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/fa-brands-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../fonts/fa-regular-400.woff2") format("woff2");
+}
+
+.fa, .fas, .far, .fab {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fab {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+.far {
+  font-weight: 400;
+}
+
+/* Essential icons */
+.fa-bars:before { content: "\f0c9"; }
+.fa-moon:before { content: "\f186"; }
+.fa-sun:before { content: "\f185"; }
+.fa-user:before { content: "\f007"; }
+.fa-code:before { content: "\f121"; }
+.fa-database:before { content: "\f1c0"; }
+.fa-tools:before { content: "\f7d9"; }
+.fa-laptop-code:before { content: "\f5fc"; }
+.fa-shopping-cart:before { content: "\f07a"; }
+.fa-chart-line:before { content: "\f201"; }
+.fa-mobile-alt:before { content: "\f3cd"; }
+.fa-blog:before { content: "\f781"; }
+.fa-weather-sun:before { content: "\f185"; }
+.fa-gamepad:before { content: "\f11b"; }
+.fa-briefcase:before { content: "\f0b1"; }
+.fa-graduation-cap:before { content: "\f19d"; }
+.fa-certificate:before { content: "\f0a3"; }
+.fa-download:before { content: "\f019"; }
+.fa-envelope:before { content: "\f0e0"; }
+.fa-phone:before { content: "\f095"; }
+.fa-map-marker-alt:before { content: "\f3c5"; }
+.fa-external-link-alt:before { content: "\f35d"; }
+
+/* Brand icons */
+.fa-github:before { content: "\f09b"; }
+.fa-linkedin:before { content: "\f08c"; }
+.fa-telegram:before { content: "\f2c6"; }
+
+/* Sizing classes */
+.fa-lg { font-size: 1.33333em; line-height: 0.75em; vertical-align: -0.0667em; }
+.fa-xl { font-size: 1.5em; line-height: 1em; }
+.fa-2x { font-size: 2em; }
+.fa-3x { font-size: 3em; }
+.fa-4x { font-size: 4em; }
+.fa-5x { font-size: 5em; }
+.fa-6x { font-size: 6em; }
