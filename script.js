@@ -13,12 +13,14 @@ const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
 const html = document.documentElement;
 
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
+// Set dark mode as default - force dark mode on first load
+const currentTheme = localStorage.getItem('theme') || 'dark';
+// Always start with dark mode unless explicitly set to light
+if (currentTheme !== 'light') {
     html.classList.add('dark');
     themeIcon.classList.remove('fa-moon');
     themeIcon.classList.add('fa-sun');
+    localStorage.setItem('theme', 'dark');
 }
 
 // Theme toggle functionality
