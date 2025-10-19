@@ -195,6 +195,29 @@ section {
     background-color: rgba(17, 24, 39, 0.5);
 }
 
+/* Theme toggle button when navbar is scrolled */
+.navbar-scrolled #theme-toggle {
+    background-color: rgba(107, 114, 128, 0.2) !important;
+    border: 1px solid rgba(107, 114, 128, 0.3) !important;
+}
+
+.navbar-scrolled #theme-toggle:hover {
+    background-color: rgba(107, 114, 128, 0.3) !important;
+}
+
+.navbar-scrolled #theme-icon {
+    color: #374151 !important;
+}
+
+.dark.navbar-scrolled #theme-toggle {
+    background-color: rgba(17, 24, 39, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark.navbar-scrolled #theme-icon {
+    color: #f3f4f6 !important;
+}
+
 /* Dark mode styles for sections */
 .dark section {
     background-color: inherit;
